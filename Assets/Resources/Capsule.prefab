@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8177798404317717667}
   - component: {fileID: 6829582633829456093}
   - component: {fileID: 2301699831699493036}
+  - component: {fileID: 2015498855784408344}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -110,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 5
+  m_animator: {fileID: 8134507192683768237}
 --- !u!114 &2301699831699493036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +127,28 @@ MonoBehaviour:
   m_localScripts:
   - {fileID: 6829582633829456093}
   m_localObjects: []
+--- !u!114 &2015498855784408344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014464650331393593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 2301699831699493036}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &8194036885384939881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -197,6 +221,12 @@ PrefabInstance:
 --- !u!4 &8189392218715137333 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4927973787200604, guid: 7e6e29f21a00d5f499e21eb93d6fabaa,
+    type: 3}
+  m_PrefabInstance: {fileID: 8194036885384939881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &8134507192683768237 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95844511793012932, guid: 7e6e29f21a00d5f499e21eb93d6fabaa,
     type: 3}
   m_PrefabInstance: {fileID: 8194036885384939881}
   m_PrefabAsset: {fileID: 0}
