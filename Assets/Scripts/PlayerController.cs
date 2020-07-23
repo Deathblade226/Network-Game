@@ -11,7 +11,7 @@ void Update() {
 	transform.Translate(forward); 
 	Vector3 side = (Input.GetAxis("Horizontal") * transform.right * m_speed * Time.deltaTime);
 	transform.Translate(side);
-	m_animator.SetFloat("Speed", forward.magnitude);
+	m_animator.SetFloat("Speed", Input.GetAxis("Vertical"));
 } 
 
 }

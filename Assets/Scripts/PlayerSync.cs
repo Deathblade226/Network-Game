@@ -30,8 +30,8 @@ public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
 } 
 void Update() { 
     if (!photonView.IsMine) {
-    // update remote player (smooth this, this looks good, at the cost of some accuracy)            
-    transform.position = Vector3.Lerp(transform.position, m_currentPosition, Time.deltaTime * 5);            
+    // update remote player (smooth this, this looks good, at the cost of some accuracy)   
+    transform.position = Vector3.Lerp(transform.position, m_currentPosition, Time.deltaTime * 5);
     transform.rotation = Quaternion.Lerp(transform.rotation, m_currentRotation, Time.deltaTime * 5);        
     }    
 }
