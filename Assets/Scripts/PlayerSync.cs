@@ -36,8 +36,7 @@ void Update() {
     if (!photonView.IsMine) {
     // update remote player (smooth this, this looks good, at the cost of some accuracy)   
     transform.position = Vector3.Lerp(transform.position, m_currentPosition, Time.deltaTime * 5);
-    //m_animator.SetFloat("Speed", (transform.position - m_currentPosition).magnitude);
-    m_animator.SetFloat("Speed", Input.GetAxis("Vertical"));
+    m_animator.SetFloat("Speed", (transform.position - m_currentPosition).normalized.magnitude);
     transform.rotation = Quaternion.Lerp(transform.rotation, m_currentRotation, Time.deltaTime * 5);        
     }    
 }
