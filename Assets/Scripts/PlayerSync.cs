@@ -15,7 +15,7 @@ Quaternion m_currentRotation;
 void Start()    {        
     if (photonView.IsMine) {
     // player is local
-    Camera.main.transform.position = transform.position - this.transform.forward * 10 + transform.up * 3;
+    Camera.main.transform.position = transform.position - this.transform.forward * 5 + transform.up * 3;
     Camera.main.transform.LookAt(transform.position);
     Camera.main.transform.parent = transform;
     } else {
