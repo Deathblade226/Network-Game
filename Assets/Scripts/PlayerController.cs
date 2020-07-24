@@ -21,7 +21,7 @@ void FixedUpdate() {
 
 	m_rb.AddRelativeForce(velocity * m_speed * ( velocity.z > 0 ? mod : 1 ) * Time.deltaTime, ForceMode.VelocityChange);
 	m_rb.AddRelativeForce(torque * m_speed * Time.deltaTime, ForceMode.VelocityChange);
-	//m_rb.AddRelativeTorque(torque * m_turnSpeed * Time.deltaTime);
+	m_rb.AddRelativeTorque(new Vector3(0, Input.GetAxis("Mouse X") * m_turnSpeed * Time.deltaTime));
 
 	m_animator.SetFloat("Speed X", Input.GetAxis("Vertical") * ( velocity.z > 0 ? mod : 1 ));
 	m_animator.SetFloat("Speed Z", Input.GetAxis("Horizontal") * mod);

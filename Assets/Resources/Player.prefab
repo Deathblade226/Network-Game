@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_speed: 12
   m_strafeSpeed: 5
-  m_turnSpeed: 1
+  m_turnSpeed: 5
   m_animator: {fileID: 8134507192683768237}
   m_rb: {fileID: 8955676012505100437}
 --- !u!114 &2301699831699493036

@@ -15,6 +15,7 @@ Quaternion m_currentRotation;
 void Start()    {        
     if (photonView.IsMine) {
     // player is local
+    Cursor.lockState = CursorLockMode.Locked;
     Camera.main.transform.position = transform.position - this.transform.forward * 5 + transform.up * 2;
     Camera.main.transform.LookAt(transform.position);
     Camera.main.transform.rotation.Set(30,0,0,0);
