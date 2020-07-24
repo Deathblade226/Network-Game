@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
 [SerializeField] Animator m_animator = null;
 [SerializeField] Rigidbody m_rb = null;
 
-void Update() { 
+void FixedUpdate() { 
 
 	Vector3 torque = Vector3.zero;
     torque.x = Input.GetAxis("Horizontal");
@@ -25,6 +25,9 @@ void Update() {
 
 	m_animator.SetFloat("Speed X", Input.GetAxis("Vertical") * ( velocity.z > 0 ? mod : 1 ));
 	m_animator.SetFloat("Speed Z", Input.GetAxis("Horizontal") * mod);
+
+	m_animator.SetBool("Moving", (velocity.z != 0 || torque.x != 0));
+
 } 
 
 }
