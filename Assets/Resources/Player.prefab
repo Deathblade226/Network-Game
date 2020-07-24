@@ -92,7 +92,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6014464650331393593}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: de6c8fa864dd8704299ba7711a7cb8b3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3
@@ -111,8 +111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da2c5e1fa7617e54a9740944559cc83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 10
-  m_turnSpeed: 4
+  m_speed: 12
+  m_strafeSpeed: 5
+  m_turnSpeed: 1
   m_animator: {fileID: 8134507192683768237}
   m_rb: {fileID: 8955676012505100437}
 --- !u!114 &2301699831699493036
@@ -162,13 +163,13 @@ Rigidbody:
   m_GameObject: {fileID: 6014464650331393593}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0.8
-  m_AngularDrag: 0.9
+  m_Drag: 1
+  m_AngularDrag: 1
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!1001 &8194036885384939881
 PrefabInstance:
   m_ObjectHideFlags: 0
