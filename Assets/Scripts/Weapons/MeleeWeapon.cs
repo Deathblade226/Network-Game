@@ -10,7 +10,8 @@ public void Attack() { hit = false; }
 
 private void Awake() { Type = "Melee"; }
 private void Update() {
-    GameObject go = AIUtilities.GetNearestGameObject(gameObject, attack.Target, 0, attack.Nc.Fov, attack.Nc.SeeThroughWalls);
+    GameObject go = null;
+    if (attack.Target != "") go = AIUtilities.GetNearestGameObject(gameObject, attack.Target, 0, attack.Nc.Fov, attack.Nc.SeeThroughWalls);
     if (go != null && !hit) { 
     hit = true;
     Damagable health = go.GetComponent<Damagable>();    

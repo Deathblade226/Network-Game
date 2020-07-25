@@ -1,5 +1,20 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &5014194413172695961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192653644592695012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be0c5067b335db48a1bd2a1eea67c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  destroyOnHit: 0
+  Type: Weapon
 --- !u!95 &5014194412704320660
 Animator:
   serializedVersion: 3
@@ -19,21 +34,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5014194413172695961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192653644592695012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be0c5067b335db48a1bd2a1eea67c76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  destroyOnHit: 0
-  Type: Weapon
 --- !u!1 &5014194413687169877
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,13 +52,15 @@ GameObject:
   - component: {fileID: 5014194413687169869}
   - component: {fileID: 5014194413687169867}
   - component: {fileID: 5014194413687169866}
+  - component: {fileID: 3907090775348984177}
+  - component: {fileID: 7483223675701866489}
   m_Layer: 0
   m_Name: Monster (Tank)
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5014194413687169871
 Transform:
   m_ObjectHideFlags: 0
@@ -298,6 +300,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 5014194413687169872}
+--- !u!114 &3907090775348984177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5014194413687169877}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68d6d951c6f9b0242934c060d9797c91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 5014194412704320660}
+  m_localScripts:
+  - {fileID: 5014194413687169875}
+  m_localObjects: []
+--- !u!114 &7483223675701866489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5014194413687169877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 3907090775348984177}
+  viewIdField: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &5014194414671875323
 PrefabInstance:
   m_ObjectHideFlags: 0

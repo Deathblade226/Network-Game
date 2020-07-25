@@ -19,11 +19,12 @@ public bool Attacking { get => attacking; }
 private float AttackTime = 0;
 private bool attacking = false;
 //Short for altTarget but this is the object version
-private GameObject altT = null; 
+private GameObject altT = null;
 
-private void Start() {
+private void Awake() {
 	if(weapon != null) weapon.attack = this;
 }
+
 private void Update() {
 	if (lookForAltTarget) altT = AIUtilities.GetNearestGameObject(gameObject, target, attackRange);
 
