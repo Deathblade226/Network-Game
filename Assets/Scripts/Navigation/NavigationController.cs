@@ -41,6 +41,8 @@ private void Update() {
 
 IEnumerator MonsterLogic() { 
     GameObject target = AIUtilities.GetNearestGameObject(gameObject, attackNav.target, Range, Fov);
+    Debug.Log(attackNav.target);
+    Debug.Log(target);
     if (target != null) { 
     
     Debug.Log("Out1"); 
@@ -49,7 +51,7 @@ IEnumerator MonsterLogic() {
     Agent.SetDestination(target.transform.position); 
     
     } else if (attackNav != null && attackNav.Target != "" && !attackNav.Active) { 
-    
+
     Debug.Log("Out2"); 
     travelNav.Moving = false; 
     wanderNav.StopWander(); 
@@ -57,7 +59,7 @@ IEnumerator MonsterLogic() {
     
     } else if (objective != null && !travelNav.Moving && !attackNav.Active) { 
 
-    Debug.Log("Out3"); 
+    Debug.Log("Out3");
     wanderNav.StopWander(); 
     travelNav.StartTravel();  
     

@@ -11,7 +11,7 @@ public class AttackNav : MonoBehaviour {
 [SerializeField] bool lookForAltTarget = false;
 [SerializeField] public string target = "";
 
-public string Target { get; set; }
+public string Target { get; set; } = "";
 public bool Active { get; set; } = false;
 public NavigationController Nc { get => nc; set => nc = value; }
 public bool Attacking { get => attacking; }
@@ -28,7 +28,7 @@ private void Update() {
 	if (lookForAltTarget) altT = AIUtilities.GetNearestGameObject(gameObject, target, attackRange);
 
 	if (altT != null) { Target = altT.tag; Active = true; }
-	else {Target = ""; Active = false; Nc.Agent.isStopped = false; }
+	else { StopAttacking(); Nc.Agent.isStopped = false; }
 
 	if (Target != "" && Active) { 
 
