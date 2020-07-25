@@ -7,9 +7,15 @@ using UnityEngine.AI;
 public class PathingDebug : MonoBehaviour {
 [SerializeField] NavMeshAgent agent;
 private LineRenderer lineRenderer;
+
+private void Awake() {
+    agent = gameObject.GetComponent<NavMeshAgent>();            
+}
+
 void Start() {
     lineRenderer = GetComponent<LineRenderer>();
 }
+
 void Update() {
     if (agent.hasPath) { 
     lineRenderer.positionCount = agent.path.corners.Length;

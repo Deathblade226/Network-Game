@@ -8,24 +8,26 @@ public class AttackNav : MonoBehaviour {
 [SerializeField] float attackRange = 2.0f;
 [SerializeField] NavigationController nc = null;
 [SerializeField] Weapon weapon = null;
-[SerializeField] bool lookForTowers = false;
+[SerializeField] bool lookForAltTarget = false;
+[SerializeField] public string target = "";
 
-public string Target { get; set; } = "";
+public string Target { get; set; }
 public bool Active { get; set; } = false;
 public NavigationController Nc { get => nc; set => nc = value; }
 public bool Attacking { get => attacking; }
 
 private float AttackTime = 0;
 private bool attacking = false;
-private GameObject tower = null;
+//Short for altTarget but this is the object version
+private GameObject altT = null; 
 
 private void Start() {
-	weapon.attack = this;
+	if(weapon != null) weapon.attack = this;
 }
 private void Update() {
-	if (lookForTowers) tower = AIUtilities.GetNearestGameObject(gameObject, "Defence", attackRange);
+	if (lookForAltTarget) altT = AIUtilities.GetNearestGameObject(gameObject, target, attackRange);
 
-	if (tower != null) { Target = tower.tag; Active = true; }
+	if (altT != null) { Target = altT.tag; Active = true; }
 	else {Target = ""; Active = false; Nc.Agent.isStopped = false; }
 
 	if (Target != "" && Active) { 
@@ -37,7 +39,7 @@ private void Update() {
 	attacking = ((transform.position - target.transform.position).magnitude <= attackRange && AttackTime <= 0);
 	
 	if (attacking) {
-	if (weapon.Type == "Melee") ((MeleeWeapon)weapon).Attack();
+	if (weapon != null && weapon.Type == "Melee") ((MeleeWeapon)weapon).Attack();
 	if (Nc.Animator != null) Nc.Animator.SetTrigger("Attack");  
 
 	transform.LookAt(target.transform);
