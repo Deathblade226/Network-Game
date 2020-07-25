@@ -14,11 +14,13 @@ private NavMeshPath navPath ;
 private GameObject objective = null;
 
 void Start() {
-    attackNav.Nc = this;
-    wanderNav.Nc = this;
-    travelNav.Nc = this;
     navPath = new NavMeshPath();
+    if (attackNav != null) attackNav.Nc = this;
+    if (wanderNav != null) wanderNav.Nc = this;
+    if (travelNav != null) {
+    travelNav.Nc = this;
     objective = AIUtilities.GetNearestGameObject(gameObject, travelNav.TargetTag, xray:true);
+    }
     StartCoroutine(MonsterLogic());
 }
 private void Update() {
@@ -26,9 +28,10 @@ private void Update() {
 }
 
 IEnumerator MonsterLogic() { 
-    if (attackNav.Target != "" && !attackNav.Active) { travelNav.Moving = false; wanderNav.StopWander(); attackNav.StartAttacking(); 
+    if (attackNav != null && attackNav.Target != "" && !attackNav.Active) { travelNav.Moving = false; wanderNav.StopWander(); attackNav.StartAttacking(); 
     } else if (objective != null && !travelNav.Moving && !attackNav.Active) { wanderNav.StopWander(); travelNav.StartTravel();  
-    } else if (!wanderNav.Active && !travelNav.Moving && !attackNav.Active) wanderNav.StartWander(); travelNav.Moving = false;
+    } else if (!wanderNav.Active && !travelNav.Moving && !attackNav.Active) { wanderNav.StartWander(); travelNav.Moving = false; }
+    else { Debug.Log("No other nav options"); }
 yield return null; }
 
 }
