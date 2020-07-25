@@ -68,7 +68,7 @@ IEnumerator MonsterLogic() {
     wanderNav.StartWander(); 
     travelNav.Moving = false; 
 
-    } else { Debug.Log("No other nav options"); }
+    }
 yield return null; }
 
 private void OnDestroy() {

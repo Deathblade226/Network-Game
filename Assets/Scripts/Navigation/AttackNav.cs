@@ -8,7 +8,7 @@ public class AttackNav : MonoBehaviour {
 [SerializeField] float attackRange = 2.0f;
 [SerializeField] NavigationController nc = null;
 [SerializeField] Weapon weapon = null;
-[SerializeField] bool lookForAltTarget = false;
+[SerializeField] bool lookForAltTarget = true;
 [SerializeField] public string target = "";
 
 public string Target { get; set; } = "";
