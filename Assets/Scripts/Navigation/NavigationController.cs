@@ -33,44 +33,46 @@ void Start() {
     travelNav.Nc = this;
     objective = AIUtilities.GetNearestGameObject(gameObject, travelNav.TargetTag, xray:true);
     }
-    StartCoroutine(MonsterLogic());
 }
 private void Update() {
-    if (Animator != null) Animator.SetFloat("Speed", Agent.velocity.magnitude);        
+    StartCoroutine(MonsterLogic());
+    if (Animator != null) Animator.SetFloat("Speed", Agent.velocity.magnitude);
 }
 
-IEnumerator MonsterLogic() { 
+IEnumerator MonsterLogic() {
     GameObject target = AIUtilities.GetNearestGameObject(gameObject, attackNav.target, Range, Fov);
-    Debug.Log(attackNav.target);
-    Debug.Log(target);
+
     if (target != null) { 
     
-    Debug.Log("Out1"); 
+    //Debug.Log("Out1"); 
     travelNav.Moving = false; 
     wanderNav.StopWander(); 
     Agent.SetDestination(target.transform.position); 
     
     } else if (attackNav != null && attackNav.Target != "" && !attackNav.Active) { 
 
-    Debug.Log("Out2"); 
+    //Debug.Log("Out2"); 
     travelNav.Moving = false; 
     wanderNav.StopWander(); 
     attackNav.StartAttacking(); 
     
     } else if (objective != null && !travelNav.Moving && !attackNav.Active) { 
 
-    Debug.Log("Out3");
+    //Debug.Log("Out3");
     wanderNav.StopWander(); 
     travelNav.StartTravel();  
     
     } else if (!wanderNav.Active && !travelNav.Moving && !attackNav.Active) { 
 
-    Debug.Log("Out4"); 
+    //Debug.Log("Out4"); 
     wanderNav.StartWander(); 
     travelNav.Moving = false; 
 
     } else { Debug.Log("No other nav options"); }
-
 yield return null; }
+
+private void OnDestroy() {
+    StopCoroutine(MonsterLogic());
+}
 
 }
