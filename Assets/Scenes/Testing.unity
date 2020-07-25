@@ -422,6 +422,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: nightshade_j_friedrich
       objectReference: {fileID: 0}
+    - target: {fileID: 7710326664380612567, guid: 13267e11de9346641a0c9609a489d64e,
+        type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13267e11de9346641a0c9609a489d64e, type: 3}
 --- !u!4 &1113060360 stripped
@@ -640,17 +645,17 @@ NavMeshAgent:
   m_GameObject: {fileID: 1395317018}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.5
+  m_Radius: 0.4
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
+  m_Height: 2
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1395317024
@@ -1020,16 +1025,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3907090775348984177, guid: 09421039eab93de4c8c1e06e2b287a57,
-        type: 3}
-      propertyPath: m_localScripts.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3907090775348984177, guid: 09421039eab93de4c8c1e06e2b287a57,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5014194413687169871, guid: 09421039eab93de4c8c1e06e2b287a57,
         type: 3}
       propertyPath: m_LocalPosition.x

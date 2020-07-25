@@ -7,6 +7,8 @@ public class SummonWeapon : Weapon {
 [SerializeField] GameObject summonMonster = null;
 [SerializeField] int minSummons = 1;
 [SerializeField] int maxSummons = 1;
+[SerializeField] float minRange = 1;
+[SerializeField] float maxRange = 2;
 
 private List<GameObject> Summons = new List<GameObject>();
 private bool canSummon = true;
@@ -24,7 +26,9 @@ void Update() {
     int summon = Random.Range(minSummons, maxSummons-Summons.Count);
 
     for (int i = 0; i < summon; i++) { 
-    
+    GameObject sum = GameObject.Instantiate(summonMonster);
+    sum.transform.position = new Vector3(transform.position.x + Random.Range(minRange, maxRange), transform.transform.position.y, transform.position.z + Random.Range(minRange, maxRange));
+    Summons.Add(sum);
     } 
 
     }         
