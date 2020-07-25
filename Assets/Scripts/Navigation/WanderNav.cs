@@ -35,7 +35,7 @@ private void Update() {
 
 public void StartWander() { 
 	Active = true;
-	MoveTime = 0;
+	MoveTime = MoveCd;
 }
 
 public void StopWander() { 
