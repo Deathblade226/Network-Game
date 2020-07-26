@@ -559,6 +559,7 @@ GameObject:
   - component: {fileID: 1395317019}
   - component: {fileID: 1395317030}
   - component: {fileID: 1395317029}
+  - component: {fileID: 1395317031}
   m_Layer: 0
   m_Name: Monster (Summoner)
   m_TagString: Untagged
@@ -633,7 +634,7 @@ MonoBehaviour:
   attackCD: 5
   attackRange: 10
   nc: {fileID: 0}
-  weapon: {fileID: 0}
+  weapon: {fileID: 1395317031}
   lookForAltTarget: 1
   target: Player
 --- !u!195 &1395317023
@@ -843,6 +844,26 @@ MonoBehaviour:
   m_localScripts:
   - {fileID: 1395317019}
   m_localObjects: []
+--- !u!114 &1395317031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395317018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0d0aa69b068e949af66b8d6bea2616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  destroyOnHit: 0
+  Type: Weapon
+  summonMonster: {fileID: 0}
+  minSummons: 1
+  maxSummons: 1
+  minRange: 1
+  maxRange: 2
 --- !u!1 &1451560795
 GameObject:
   m_ObjectHideFlags: 0
