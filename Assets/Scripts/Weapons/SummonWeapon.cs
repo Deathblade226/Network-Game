@@ -11,27 +11,21 @@ public class SummonWeapon : Weapon {
 [SerializeField] float maxRange = 2;
 
 private List<GameObject> Summons = new List<GameObject>();
-private bool canSummon = true;
 
 void Awake() { Type = "Summon"; }
 
-public void Attack() { canSummon = (Summons.Count <= maxSummons); }
-
-void Update() {
-    GameObject go = null;
-    if (attack.Target != "") go = AIUtilities.GetNearestGameObject(gameObject, attack.Target, 0, attack.Nc.Fov, attack.Nc.SeeThroughWalls);
-    if (go != null && canSummon) { 
-    canSummon = false;
-    
+public override void Attack() {
+    if (Summons.Count < maxSummons) { 
     int summon = Random.Range(minSummons, maxSummons-Summons.Count);
-
+    Debug.Log(summon);
+    Debug.Log(summonMonster);
     for (int i = 0; i < summon; i++) { 
     GameObject sum = GameObject.Instantiate(summonMonster);
     sum.transform.position = new Vector3(transform.position.x + Random.Range(minRange, maxRange), transform.transform.position.y, transform.position.z + Random.Range(minRange, maxRange));
     Summons.Add(sum);
-    } 
+    }
 
-    }         
+    }
 }
 
 }

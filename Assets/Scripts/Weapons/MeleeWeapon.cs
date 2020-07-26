@@ -6,7 +6,7 @@ public class MeleeWeapon : Weapon {
 
 private bool hit = false;
 
-public void Attack() { hit = false; }
+public override void Attack() { hit = false; }
 
 private void Awake() { Type = "Melee"; }
 private void Update() {

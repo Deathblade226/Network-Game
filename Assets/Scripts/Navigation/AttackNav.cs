@@ -40,15 +40,28 @@ private void Update() {
 	attacking = ((transform.position - target.transform.position).magnitude <= attackRange && AttackTime <= 0);
 	
 	if (attacking) {
-	if (weapon != null && weapon.Type == "Melee") ((MeleeWeapon)weapon).Attack();
-	if (Nc.Animator != null) Nc.Animator.SetTrigger("Attack");  
 
 	transform.LookAt(target.transform);
-	AttackTime = attackCD; Nc.Agent.isStopped = true; }
+	AttackTime = attackCD; 
+	Nc.Agent.isStopped = true; 
 
-	else if ((transform.position - target.transform.position).magnitude <= attackRange) { Nc.Agent.isStopped = true; AttackTime -= Time.deltaTime; }
+	if (weapon != null) { weapon.Attack(); }
+		
+	if (Nc.Animator != null) Nc.Animator.SetTrigger("Attack");  
 
-	else { Nc.Animator.SetTrigger("StopAttack"); Nc.Agent.SetDestination(target.transform.position); Nc.Agent.isStopped = false; AttackTime -= Time.deltaTime; }
+	} else if ((transform.position - target.transform.position).magnitude <= attackRange) { 
+	
+	Nc.Agent.isStopped = true; 
+	AttackTime -= Time.deltaTime; 
+
+	} else { 
+	
+	Nc.Animator.SetTrigger("StopAttack"); 
+	Nc.Agent.SetDestination(target.transform.position); 
+	Nc.Agent.isStopped = false; 
+	AttackTime -= Time.deltaTime; 
+
+	}
 
 	}
 	}        
