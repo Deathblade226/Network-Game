@@ -766,5 +766,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster (Summoner)
       objectReference: {fileID: 0}
+    - target: {fileID: 7481550558164974893, guid: 229c46561e4aa504187ab05115c4d4b5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 229c46561e4aa504187ab05115c4d4b5, type: 3}
