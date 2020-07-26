@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7481550558164974879}
   m_Layer: 0
   m_Name: Monster (Summoner)
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCD: 5
-  attackRange: 10
+  attackRange: 15
   nc: {fileID: 7481550558164974892}
   weapon: {fileID: 7481550558164974864}
   lookForAltTarget: 1
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_z: 1
   seeThroughWalls: 0
   fov: 180
-  range: 10
+  range: 15
   attackNav: {fileID: 7481550558164974889}
   travelNav: {fileID: 7481550558164974890}
   wanderNav: {fileID: 7481550558164974891}
@@ -322,7 +322,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 7481550558164974865}
-  viewIdField: 0
+  viewIdField: 3
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &7481550558164974864
@@ -339,13 +339,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   destroyOnHit: 0
-  Type: Weapon
+  Type: Summon
   summonMonster: {fileID: 5014194413687169877, guid: 09421039eab93de4c8c1e06e2b287a57,
     type: 3}
   minSummons: 1
-  maxSummons: 1
-  minRange: -2
-  maxRange: 2
+  maxSummons: 5
 --- !u!54 &7481550558164974879
 Rigidbody:
   m_ObjectHideFlags: 0
