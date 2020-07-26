@@ -56,9 +56,11 @@ private void Update() {
 	AttackTime -= Time.deltaTime; 
 
 	} else { 
+	if (weapon.Type != "Summon") { 
 	Nc.Animator.SetTrigger("StopAttack"); 
 	Nc.Agent.SetDestination(target.transform.position); 
 	Nc.Agent.isStopped = false; 
+	}
 	AttackTime -= Time.deltaTime; 
 
 	}
