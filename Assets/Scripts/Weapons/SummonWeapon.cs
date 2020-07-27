@@ -6,6 +6,7 @@ public class SummonWeapon : Weapon {
 
 [SerializeField] GameObject summonMonster = null;
 [SerializeField] int maxSummons = 1;
+[SerializeField] float summonDistance = 1;
 
 private bool canSummon = false;
 private List<GameObject> Summons = new List<GameObject>();
@@ -25,7 +26,7 @@ IEnumerator SummonMonster(float time) {
     yield return new WaitForSeconds(time/2);
     GameObject sum = GameObject.Instantiate(summonMonster);
     sum.transform.position = new Vector3(transform.position.x, transform.transform.position.y, transform.position.z);
-    sum.transform.position += transform.forward * 5;
+    sum.transform.position += transform.forward * summonDistance;
     Summons.Add(sum);
     StopCoroutine(SummonMonster(0));
 yield return null;}

@@ -340,7 +340,7 @@ MonoBehaviour:
   damage: 0
   destroyOnHit: 0
   Type: Summon
-  summonMonster: {fileID: 5014194413687169877, guid: 09421039eab93de4c8c1e06e2b287a57,
+  summonMonster: {fileID: 3504155887681792626, guid: 01a99be97e2564548ba7f48c48fe9b16,
     type: 3}
   maxSummons: 5
 --- !u!54 &7481550558164974879
