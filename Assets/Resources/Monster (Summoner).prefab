@@ -204,7 +204,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7481550558164974893}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
@@ -342,7 +342,6 @@ MonoBehaviour:
   Type: Summon
   summonMonster: {fileID: 5014194413687169877, guid: 09421039eab93de4c8c1e06e2b287a57,
     type: 3}
-  minSummons: 1
   maxSummons: 5
 --- !u!54 &7481550558164974879
 Rigidbody:

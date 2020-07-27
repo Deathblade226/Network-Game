@@ -5,7 +5,6 @@ using UnityEngine;
 public class SummonWeapon : Weapon {
 
 [SerializeField] GameObject summonMonster = null;
-[SerializeField] int minSummons = 1;
 [SerializeField] int maxSummons = 1;
 
 private bool canSummon = false;
@@ -16,14 +15,19 @@ void Awake() { Type = "Summon"; }
 public override void Attack() { canSummon = true; }
 
 private void Update() {
-    if (Summons.Count < maxSummons && canSummon) {
+    if (Summons.Count < maxSummons && canSummon && attack.Nc.Animator.GetCurrentAnimatorStateInfo(0).IsName("Standing 2H Magic Area Attack 01")) {
     canSummon = false;
-    int summon = Random.Range(minSummons, maxSummons-Summons.Count);
-    GameObject sum = GameObject.Instantiate(summonMonster, new Vector3(transform.position.x, transform.transform.position.y, transform.position.z) + transform.forward * 5, transform.rotation);
-    //sum.transform.position = new Vector3(transform.position.x, transform.transform.position.y, transform.position.z);
-    //sum.transform.position += transform.forward * 5;
-    Summons.Add(sum);
-    }    
+    StartCoroutine(SummonMonster(attack.Nc.Animator.GetCurrentAnimatorStateInfo(0).length));
+    }
 }
+
+IEnumerator SummonMonster(float time) {
+    yield return new WaitForSeconds(time/2);
+    GameObject sum = GameObject.Instantiate(summonMonster);
+    sum.transform.position = new Vector3(transform.position.x, transform.transform.position.y, transform.position.z);
+    sum.transform.position += transform.forward * 5;
+    Summons.Add(sum);
+    StopCoroutine(SummonMonster(0));
+yield return null;}
 
 }

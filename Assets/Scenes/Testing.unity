@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &579675441
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -688,6 +688,81 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09421039eab93de4c8c1e06e2b287a57, type: 3}
+--- !u!1001 &5679866937019310163
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4727610227014349765, guid: db3eb025e0fc9ca4fb1b30fb6809ad91,
+        type: 3}
+      propertyPath: spawn
+      value: 
+      objectReference: {fileID: 5014194413687169877, guid: 09421039eab93de4c8c1e06e2b287a57,
+        type: 3}
+    - target: {fileID: 5679866935758135504, guid: db3eb025e0fc9ca4fb1b30fb6809ad91,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679866935758135504, guid: db3eb025e0fc9ca4fb1b30fb6809ad91,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679866935758135504, guid: db3eb025e0fc9ca4fb1b30fb6809ad91,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679866935758135504, guid: db3eb025e0fc9ca4fb1b30fb6809ad91,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679866935758135504, guid: db3eb025e0fc9ca4fb1b30fb6809ad91,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679866935758135504, guid: db3eb025e0fc9ca4fb1b30fb6809ad91,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679866935758135504, guid: db3eb025e0fc9ca4fb1b30fb6809ad91,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679866935758135504, guid: db3eb025e0fc9ca4fb1b30fb6809ad91,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679866935758135504, guid: db3eb025e0fc9ca4fb1b30fb6809ad91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679866935758135504, guid: db3eb025e0fc9ca4fb1b30fb6809ad91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679866935758135504, guid: db3eb025e0fc9ca4fb1b30fb6809ad91,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5679866935758135505, guid: db3eb025e0fc9ca4fb1b30fb6809ad91,
+        type: 3}
+      propertyPath: m_Name
+      value: Spawer Node
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: db3eb025e0fc9ca4fb1b30fb6809ad91, type: 3}
 --- !u!1001 &7481550556874843191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -695,12 +770,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7481550558164974864, guid: 229c46561e4aa504187ab05115c4d4b5,
-        type: 3}
-      propertyPath: summonMonster
-      value: 
-      objectReference: {fileID: 249098805787326530, guid: 2440c3bc41c4d5749ac3fab5db88ff46,
-        type: 3}
     - target: {fileID: 7481550558164974866, guid: 229c46561e4aa504187ab05115c4d4b5,
         type: 3}
       propertyPath: viewIdField
@@ -744,7 +813,7 @@ PrefabInstance:
     - target: {fileID: 7481550558164974867, guid: 229c46561e4aa504187ab05115c4d4b5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7481550558164974867, guid: 229c46561e4aa504187ab05115c4d4b5,
         type: 3}
