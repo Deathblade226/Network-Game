@@ -690,6 +690,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4088923828712426826, guid: 09421039eab93de4c8c1e06e2b287a57,
+        type: 3}
+      propertyPath: viewIdField
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5014194413687169871, guid: 09421039eab93de4c8c1e06e2b287a57,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -749,6 +754,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Monster (Tank)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7483223675701866489, guid: 09421039eab93de4c8c1e06e2b287a57,
+        type: 3}
+      propertyPath: viewIdField
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09421039eab93de4c8c1e06e2b287a57, type: 3}
