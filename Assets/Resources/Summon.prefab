@@ -1,20 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &3504155886800856602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7267815411223536044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be0c5067b335db48a1bd2a1eea67c76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  destroyOnHit: 0
-  Type: Weapon
 --- !u!1 &3504155887681792626
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,6 +19,7 @@ GameObject:
   - component: {fileID: 3504155887681792629}
   - component: {fileID: 3504155887681792628}
   - component: {fileID: 3504155887681792627}
+  - component: {fileID: 6499492829657908944}
   m_Layer: 2
   m_Name: Summon
   m_TagString: Untagged
@@ -319,6 +305,22 @@ MonoBehaviour:
   attackNav: {fileID: 3504155887681792630}
   travelNav: {fileID: 3504155887681792629}
   wanderNav: {fileID: 3504155887681792628}
+--- !u!54 &6499492829657908944
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3504155887681792626}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 1
+  m_AngularDrag: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 80
+  m_CollisionDetection: 0
 --- !u!95 &3504155888448324144
 Animator:
   serializedVersion: 3
@@ -338,6 +340,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3504155886800856602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7267815411223536044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be0c5067b335db48a1bd2a1eea67c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  destroyOnHit: 0
+  Type: Weapon
 --- !u!1001 &3504155887532429665
 PrefabInstance:
   m_ObjectHideFlags: 0
