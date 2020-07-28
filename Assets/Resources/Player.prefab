@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 2301699831699493036}
   - component: {fileID: 2015498855784408344}
   - component: {fileID: 8955676012505100437}
+  - component: {fileID: 7811283382757414179}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +117,7 @@ MonoBehaviour:
   m_turnSpeed: 5
   m_animator: {fileID: 8134507192683768237}
   m_rb: {fileID: 8955676012505100437}
-  m_weapon: {fileID: 0}
+  m_weapon: {fileID: 8192957970692913477}
 --- !u!114 &2301699831699493036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +172,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 2
+--- !u!114 &7811283382757414179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014464650331393593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6e35a7883321641817b168de6b3259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 100
+  m_damage: {fileID: 0}
+  m_damageReduction: 0
+  score: 0
 --- !u!114 &2955727713848092290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +248,21 @@ MonoBehaviour:
     LayerIndex: 0
   - SynchronizeType: 2
     LayerIndex: 1
+--- !u!114 &2798623294600402847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8192957970692913477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be0c5067b335db48a1bd2a1eea67c76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  destroyOnHit: 0
+  Type: Weapon
 --- !u!1001 &8194036885384939881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -238,6 +270,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 923987509823091532}
     m_Modifications:
+    - target: {fileID: 1173177213022252, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1668188202801692, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
       propertyPath: m_Name
       value: Male A
@@ -324,6 +360,12 @@ Transform:
 --- !u!95 &8134507192683768237 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95844511793012932, guid: 7e6e29f21a00d5f499e21eb93d6fabaa,
+    type: 3}
+  m_PrefabInstance: {fileID: 8194036885384939881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8192957970692913477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1173177213022252, guid: 7e6e29f21a00d5f499e21eb93d6fabaa,
     type: 3}
   m_PrefabInstance: {fileID: 8194036885384939881}
   m_PrefabAsset: {fileID: 0}

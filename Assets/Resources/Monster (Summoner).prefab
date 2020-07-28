@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 7481550558164974866}
   - component: {fileID: 7481550558164974864}
   - component: {fileID: 7481550558164974879}
+  - component: {fileID: -3018127097684168083}
   m_Layer: 0
   m_Name: Monster (Summoner)
   m_TagString: Monster
@@ -343,6 +344,7 @@ MonoBehaviour:
   summonMonster: {fileID: 3504155887681792626, guid: 01a99be97e2564548ba7f48c48fe9b16,
     type: 3}
   maxSummons: 5
+  summonDistance: 1
 --- !u!54 &7481550558164974879
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -359,6 +361,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &-3018127097684168083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7481550558164974893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6e35a7883321641817b168de6b3259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_health: 100
+  m_damage: {fileID: 0}
+  m_damageReduction: 0
+  score: 0
 --- !u!1001 &7481550557919924272
 PrefabInstance:
   m_ObjectHideFlags: 0
