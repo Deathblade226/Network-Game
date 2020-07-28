@@ -9,6 +9,15 @@ public class PlayerController : MonoBehaviour {
 [SerializeField] float m_turnSpeed = 5.0f; 
 [SerializeField] Animator m_animator = null;
 [SerializeField] Rigidbody m_rb = null;
+[SerializeField] GameObject m_weapon = null;
+
+private void Update() {
+	if (Input.GetMouseButtonDown(0)) {  
+	m_animator.SetLayerWeight(1,1);
+	m_animator.SetTrigger("Attack"); 
+	} else if (!m_animator.GetCurrentAnimatorStateInfo(1).IsName("Male Attack 2")) { m_animator.SetLayerWeight(1, 0); }
+	else { m_animator.SetLayerWeight(1, 1); }
+}
 
 void FixedUpdate() { 
 
@@ -27,7 +36,6 @@ void FixedUpdate() {
 	m_animator.SetFloat("Speed Z", Input.GetAxis("Horizontal") * mod);
 
 	m_animator.SetBool("Moving", (velocity.z != 0 || torque.x != 0));
-
 } 
 
 }
