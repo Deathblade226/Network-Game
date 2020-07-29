@@ -25,11 +25,11 @@ private void Start() { MaxHealth = health;
 }
 
 private void Update() {
+	if (m_healthBar != null) m_healthBar.value = health;
 }
 
 public void ApplyDamage(float damageAmount) {
 	health = health - (damageAmount - (damageAmount*DamageReduction));
-	if (m_healthBar != null) m_healthBar.value = health;
 	if (!destroyed && health <= 0) {
 	//Game.game.Currency += score;
 	if (m_damage != null) {
