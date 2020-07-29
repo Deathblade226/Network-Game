@@ -26,7 +26,7 @@ private void MonsterAttack() {
 }
 private void PlayerAttack() { 
     GameObject go = null;
-    go = AIUtilities.GetNearestGameObject(gameObject, attack.Target, 0, attack.Nc.Fov, attack.Nc.SeeThroughWalls);
+    go = AIUtilities.GetNearestGameObject(gameObject, "Monster", 0, 360, true);
     if (go != null) { 
     Damagable health = go.GetComponent<Damagable>();    
     if (health != null) health.ApplyDamage(Damage);

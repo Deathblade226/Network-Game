@@ -18,15 +18,18 @@ public float health { get => m_health; set => m_health = value; }
 public bool destroyed { get; set; } = false;
 public float DamageReduction { get => m_damageReduction; set => m_damageReduction = value; }
 private void Start() { MaxHealth = health; 
+	if (m_healthBar != null) { 
 	m_healthBar.maxValue = health;
+	m_healthBar.value = health;
+	}
 }
 
 private void Update() {
-	m_healthBar.value = health;
 }
 
 public void ApplyDamage(float damageAmount) {
 	health = health - (damageAmount - (damageAmount*DamageReduction));
+	if (m_healthBar != null) m_healthBar.value = health;
 	if (!destroyed && health <= 0) {
 	//Game.game.Currency += score;
 	if (m_damage != null) {

@@ -186,6 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_health: 100
   m_damage: {fileID: 0}
+  m_healthBar: {fileID: 0}
   m_damageReduction: 0
   score: 0
 --- !u!114 &2955727713848092290
