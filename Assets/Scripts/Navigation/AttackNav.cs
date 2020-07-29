@@ -8,7 +8,8 @@ public class AttackNav : MonoBehaviour {
 [SerializeField] float attackRange = 2.0f;
 [SerializeField] NavigationController nc = null;
 [SerializeField] Weapon weapon = null;
-[SerializeField] bool lookForTowers = false;
+[SerializeField] bool lookForAltTarget = true;
+[SerializeField] public string target = "";
 
 public string Target { get; set; } = "";
 public bool Active { get; set; } = false;
@@ -17,35 +18,52 @@ public bool Attacking { get => attacking; }
 
 private float AttackTime = 0;
 private bool attacking = false;
-private GameObject tower = null;
+//Short for altTarget but this is the object version
+private GameObject altT = null;
 
-private void Start() {
-	weapon.attack = this;
+private void Awake() {
+	if(weapon != null) weapon.attack = this;
 }
+
 private void Update() {
-	if (lookForTowers) tower = AIUtilities.GetNearestGameObject(gameObject, "Defence", attackRange);
+	if (lookForAltTarget) altT = AIUtilities.GetNearestGameObject(gameObject, target, attackRange);
 
-	if (tower != null) { Target = tower.tag; Active = true; }
-	else {Target = ""; Active = false; Nc.Agent.isStopped = false; }
+	if (altT != null) { Target = altT.tag; Active = true; }
+	else { StopAttacking(); Nc.Agent.isStopped = false; }
 
-	if (Target != "" && Active) { 
 
+	if ((Target != "" || altT != null) && Active) { 
+	
 	var target = AIUtilities.GetNearestGameObject(gameObject, Target, Nc.Range, Nc.Fov, Nc.SeeThroughWalls);
 
-	if (target != null) {
+	if (target != null) { 
 
 	attacking = ((transform.position - target.transform.position).magnitude <= attackRange && AttackTime <= 0);
 	
 	if (attacking) {
-	if (weapon.Type == "Melee") ((MeleeWeapon)weapon).Attack();
+	transform.LookAt(target.transform);
+	AttackTime = attackCD; 
+	Nc.Agent.isStopped = true; 
+
+	if (weapon != null) { 
+	weapon.Attack(); 
+	}
+		
 	if (Nc.Animator != null) Nc.Animator.SetTrigger("Attack");  
 
-	transform.LookAt(target.transform);
-	AttackTime = attackCD; Nc.Agent.isStopped = true; }
+	} else if ((transform.position - target.transform.position).magnitude <= attackRange) { 
+	Nc.Agent.isStopped = true; 
+	AttackTime -= Time.deltaTime; 
 
-	else if ((transform.position - target.transform.position).magnitude <= attackRange) { Nc.Agent.isStopped = true; AttackTime -= Time.deltaTime; }
+	} else { 
+	if (weapon.Type != "Summon") { 
+	Nc.Animator.SetTrigger("StopAttack"); 
+	Nc.Agent.SetDestination(target.transform.position); 
+	Nc.Agent.isStopped = false; 
+	}
+	AttackTime -= Time.deltaTime; 
 
-	else { Nc.Animator.SetTrigger("StopAttack"); Nc.Agent.SetDestination(target.transform.position); Nc.Agent.isStopped = false; AttackTime -= Time.deltaTime; }
+	}
 
 	}
 	}        

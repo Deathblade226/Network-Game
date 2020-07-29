@@ -12,7 +12,7 @@ public class RangedWeapon : Weapon {
 
 private void Awake() { Type = "Ranged"; }
 
-public void Attack() {
+public override void Attack() {
     GameObject go = Instantiate(projectile, spawner.gameObject.transform.position, Quaternion.identity);
     go.GetComponent<MeleeWeapon>().attack = attack;
     go.GetComponent<Rigidbody>().useGravity = gravity;
