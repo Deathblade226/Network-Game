@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6ea9590a265c9448cb58ebf8843a30, type: 3}
+  m_Name: New KeyManager
+  m_EditorClassIdentifier: 
+  keys:
+  - Prefab: {fileID: 4335494046705251144, guid: d0cef217196767c40a445afc4749f965,
+      type: 3}
+    Colour: {r: 0.21042863, g: 0.759418, b: 0.3188651, a: 1}
+    KeysPerLock:
+      Min: 1
+      Max: 1
+    id: 0
+    name: Basic Cell
+  - Prefab: {fileID: 6162638621901302489, guid: 7c561eba0b8767144b053b3a35ec48a7,
+      type: 3}
+    Colour: {r: 0.76487255, g: 0.42564005, b: 0.5883768, a: 1}
+    KeysPerLock:
+      Min: 1
+      Max: 1
+    id: 1
+    name: Basic Room 1 Door
+  - Prefab: {fileID: 1239784522952323845, guid: d44ff0fa4ba69f74ab52077b23ce5dea,
+      type: 3}
+    Colour: {r: 0.6731555, g: 0.71243376, b: 0.8303491, a: 1}
+    KeysPerLock:
+      Min: 1
+      Max: 1
+    id: 2
+    name: Basic Room 2 Doors (across)
+  - Prefab: {fileID: 5222193457256601459, guid: 29255e00c488e964f87fbdf7e39dee55,
+      type: 3}
+    Colour: {r: 0.6435161, g: 0.22933224, b: 0.2975501, a: 1}
+    KeysPerLock:
+      Min: 1
+      Max: 1
+    id: 3
+    name: Basic Room 2 Doors Beside
+  - Prefab: {fileID: 6027569877982294000, guid: 3b542d205da9b294aa7e08c8074795a0,
+      type: 3}
+    Colour: {r: 0.121570125, g: 0.39543325, b: 0.31930092, a: 1}
+    KeysPerLock:
+      Min: 1
+      Max: 1
+    id: 5
+    name: Basic Room 3 Doors
+  - Prefab: {fileID: 5449514052997197930, guid: c5fd81ee435ac12408398e049f849994,
+      type: 3}
+    Colour: {r: 0.743831, g: 0.87673223, b: 0.6367759, a: 1}
+    KeysPerLock:
+      Min: 1
+      Max: 1
+    id: 6
+    name: Basic Room 4 Doors
+  - Prefab: {fileID: 8502360270376824860, guid: 092e5fc5b2379c541b74fa7ad0c354d6,
+      type: 3}
+    Colour: {r: 0.40443438, g: 0.4121924, b: 0.6308752, a: 1}
+    KeysPerLock:
+      Min: 1
+      Max: 1
+    id: 7
+    name: Hallway 2 Doors 1 Wide (across)
+  - Prefab: {fileID: 8405212844666032944, guid: 1ac10370c5705694188f0ba480cc5f79,
+      type: 3}
+    Colour: {r: 0.3740435, g: 0.423626, b: 0.68437535, a: 1}
+    KeysPerLock:
+      Min: 1
+      Max: 1
+    id: 8
+    name: Hallways 2 Doors 3 Wide (across)
+  - Prefab: {fileID: 8502360270376824860, guid: 8279bc2843e93524a8d0bb8131c0acb1,
+      type: 3}
+    Colour: {r: 0.38399154, g: 0.88042223, b: 0.29997578, a: 1}
+    KeysPerLock:
+      Min: 1
+      Max: 1
+    id: 9
+    name: Hallway 3 Doors 1 Wide
+  - Prefab: {fileID: 8405212844666032944, guid: fcbd297aee5a94241ad8681b98075a74,
+      type: 3}
+    Colour: {r: 0.71101314, g: 0.4856326, b: 0.5395736, a: 1}
+    KeysPerLock:
+      Min: 1
+      Max: 1
+    id: 10
+    name: Hallway 3 Doors 3 Wide
+  - Prefab: {fileID: 8405212844666032944, guid: ee478ba20671b2b42948fae069d18cdf,
+      type: 3}
+    Colour: {r: 0.6617033, g: 0.08393324, b: 0.28016546, a: 1}
+    KeysPerLock:
+      Min: 1
+      Max: 1
+    id: 11
+    name: Hallway 3 Doors T-Shape
+  - Prefab: {fileID: 8405212844666032944, guid: 2bd4ffe49fba1f34ba263f02e9a4b40c,
+      type: 3}
+    Colour: {r: 0.7728088, g: 0.4072116, b: 0.47889346, a: 1}
+    KeysPerLock:
+      Min: 1
+      Max: 1
+    id: 12
+    name: Hallway 4 Doors +-Shape
+  - Prefab: {fileID: 8502360270376824860, guid: 9e964fc6b96787c458520eba29bc2731,
+      type: 3}
+    Colour: {r: 0.20275453, g: 0.5939438, b: 0.56455964, a: 1}
+    KeysPerLock:
+      Min: 1
+      Max: 1
+    id: 13
+    name: Hallway 4 Doors 1 Wide
+  - Prefab: {fileID: 8405212844666032944, guid: d91eec6fb4fa141429f24dfaf9821498,
+      type: 3}
+    Colour: {r: 0.75983834, g: 0.6309646, b: 0.7143859, a: 1}
+    KeysPerLock:
+      Min: 1
+      Max: 1
+    id: 14
+    name: Hallways 4 Doors 3 Wide
