@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: New DungeonArchetype
   m_EditorClassIdentifier: 
   TileSets:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 25ee89aa0fa105f4b81446efdd9bbb46, type: 2}
   BranchCapTileSets: []
   BranchCapType: 1
   BranchingDepth:
