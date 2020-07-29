@@ -859,10 +859,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7481550558164974864, guid: 229c46561e4aa504187ab05115c4d4b5,
+    - target: {fileID: 1258351920964863345, guid: 229c46561e4aa504187ab05115c4d4b5,
         type: 3}
-      propertyPath: summonDistance
-      value: 2
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602506086682589169, guid: 229c46561e4aa504187ab05115c4d4b5,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602506086682589169, guid: 229c46561e4aa504187ab05115c4d4b5,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7481550558164974866, guid: 229c46561e4aa504187ab05115c4d4b5,
         type: 3}
@@ -928,11 +938,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Monster (Summoner)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7481550558164974893, guid: 229c46561e4aa504187ab05115c4d4b5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 229c46561e4aa504187ab05115c4d4b5, type: 3}

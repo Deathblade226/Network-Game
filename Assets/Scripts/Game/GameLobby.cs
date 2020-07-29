@@ -43,7 +43,7 @@ void LobbyWindow(int index) {
     RoomOptions roomOptions = new RoomOptions(); 
     roomOptions.IsOpen = true; 
     roomOptions.IsVisible = true; 
-    roomOptions.MaxPlayers = 4; // set any number                
+    roomOptions.MaxPlayers = 6; // set any number                
     PhotonNetwork.JoinOrCreateRoom(roomName, roomOptions, TypedLobby.Default);            
     }}
     GUILayout.EndHorizontal();

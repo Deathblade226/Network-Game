@@ -11,6 +11,7 @@ public override void Attack() { hit = false; }
 private void Awake() { Type = "Melee"; }
 private void Update() {
     if (gameObject.tag == "Monster") { MonsterAttack(); }
+    else if (gameObject.tag == "Player") { PlayerAttack(); }
 }
 
 private void MonsterAttack() { 
