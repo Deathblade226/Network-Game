@@ -22,7 +22,6 @@ private void Update() {
 }
 
 void FixedUpdate() { 
-
 	Vector3 torque = Vector3.zero;
     torque.x = Input.GetAxis("Horizontal");
     Vector3 velocity = Vector3.zero;
