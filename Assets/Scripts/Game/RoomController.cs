@@ -32,7 +32,7 @@ void OnGUI() {
 
 public override void OnLeftRoom() {
 	// left the Room, return back to the GameLobby
-	UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");    
+	UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");  
 }
 
 }
