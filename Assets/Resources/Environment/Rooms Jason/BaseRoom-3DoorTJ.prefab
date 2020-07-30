@@ -349,7 +349,8 @@ MonoBehaviour:
   SocketGroup: 0
   DoorPrefabPriority: 0
   DoorPrefabs: []
-  BlockerPrefabs: []
+  BlockerPrefabs:
+  - {fileID: 7490111542982667581, guid: 6c3113469db412a44b703c6cc1bc3b1f, type: 3}
   AvoidRotatingDoorPrefab: 0
   AvoidRotatingBlockerPrefab: 0
   AddWhenInUse: []
@@ -406,7 +407,8 @@ MonoBehaviour:
   SocketGroup: 0
   DoorPrefabPriority: 0
   DoorPrefabs: []
-  BlockerPrefabs: []
+  BlockerPrefabs:
+  - {fileID: 7490111542982667581, guid: 6c3113469db412a44b703c6cc1bc3b1f, type: 3}
   AvoidRotatingDoorPrefab: 0
   AvoidRotatingBlockerPrefab: 0
   AddWhenInUse: []
@@ -463,7 +465,8 @@ MonoBehaviour:
   SocketGroup: 0
   DoorPrefabPriority: 0
   DoorPrefabs: []
-  BlockerPrefabs: []
+  BlockerPrefabs:
+  - {fileID: 7490111542982667581, guid: 6c3113469db412a44b703c6cc1bc3b1f, type: 3}
   AvoidRotatingDoorPrefab: 0
   AvoidRotatingBlockerPrefab: 0
   AddWhenInUse: []
@@ -484,7 +487,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1352018800577855957}
   m_Layer: 0
-  m_Name: BaseRoom-2DoorTJ
+  m_Name: BaseRoom-3DoorTJ
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -556,7 +559,8 @@ MonoBehaviour:
   SocketGroup: 0
   DoorPrefabPriority: 0
   DoorPrefabs: []
-  BlockerPrefabs: []
+  BlockerPrefabs:
+  - {fileID: 7490111542982667581, guid: 6c3113469db412a44b703c6cc1bc3b1f, type: 3}
   AvoidRotatingDoorPrefab: 0
   AvoidRotatingBlockerPrefab: 0
   AddWhenInUse: []

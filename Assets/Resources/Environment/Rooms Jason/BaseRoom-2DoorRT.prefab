@@ -80,7 +80,8 @@ MonoBehaviour:
   SocketGroup: 0
   DoorPrefabPriority: 0
   DoorPrefabs: []
-  BlockerPrefabs: []
+  BlockerPrefabs:
+  - {fileID: 7490111542982667581, guid: 6c3113469db412a44b703c6cc1bc3b1f, type: 3}
   AvoidRotatingDoorPrefab: 0
   AvoidRotatingBlockerPrefab: 0
   AddWhenInUse: []
@@ -173,7 +174,8 @@ MonoBehaviour:
   SocketGroup: 0
   DoorPrefabPriority: 0
   DoorPrefabs: []
-  BlockerPrefabs: []
+  BlockerPrefabs:
+  - {fileID: 7490111542982667581, guid: 6c3113469db412a44b703c6cc1bc3b1f, type: 3}
   AvoidRotatingDoorPrefab: 0
   AvoidRotatingBlockerPrefab: 0
   AddWhenInUse: []
@@ -230,7 +232,8 @@ MonoBehaviour:
   SocketGroup: 0
   DoorPrefabPriority: 0
   DoorPrefabs: []
-  BlockerPrefabs: []
+  BlockerPrefabs:
+  - {fileID: 7490111542982667581, guid: 6c3113469db412a44b703c6cc1bc3b1f, type: 3}
   AvoidRotatingDoorPrefab: 0
   AvoidRotatingBlockerPrefab: 0
   AddWhenInUse: []
@@ -287,7 +290,8 @@ MonoBehaviour:
   SocketGroup: 0
   DoorPrefabPriority: 0
   DoorPrefabs: []
-  BlockerPrefabs: []
+  BlockerPrefabs:
+  - {fileID: 7490111542982667581, guid: 6c3113469db412a44b703c6cc1bc3b1f, type: 3}
   AvoidRotatingDoorPrefab: 0
   AvoidRotatingBlockerPrefab: 0
   AddWhenInUse: []
