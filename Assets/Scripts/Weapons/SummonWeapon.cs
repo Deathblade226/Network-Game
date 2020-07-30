@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,12 @@ void Awake() { Type = "Summon"; }
 public override void Attack() { canSummon = true; }
 
 private void Update() {
+    if (!PV.IsMine) return;
+    PV.RPC("RPC_Summon", RpcTarget.All);
+}
+
+[PunRPC]
+void RPC_Summon() { 
     if (Summons.Count < maxSummons && canSummon && attack.Nc.Animator.GetCurrentAnimatorStateInfo(0).IsName("Standing 2H Magic Area Attack 01")) {
     canSummon = false;
     StartCoroutine(SummonMonster(attack.Nc.Animator.GetCurrentAnimatorStateInfo(0).length));

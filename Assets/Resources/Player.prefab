@@ -266,6 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   destroyOnHit: 0
+  pv: {fileID: 2015498855784408344}
   Type: Weapon
 --- !u!1001 &8194036885384939881
 PrefabInstance:

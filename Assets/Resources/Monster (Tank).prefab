@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2be0c5067b335db48a1bd2a1eea67c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 10
   destroyOnHit: 0
+  pv: {fileID: 7483223675701866489}
   Type: Weapon
 --- !u!1 &2961848986058579450
 GameObject:
