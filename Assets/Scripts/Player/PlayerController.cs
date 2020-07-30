@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour {
 [SerializeField] GameObject m_weapon = null;
 
 private void Update() {
-	if (m_weapon != null && !m_weapon.activeSelf) { 
+	Debug.Log(m_weapon);
+	if (m_weapon != null && m_weapon.activeSelf) { 
 	if (Input.GetMouseButtonDown(0)) {  
 	m_animator.SetLayerWeight(1,1);
 	m_animator.SetTrigger("Attack"); 
@@ -22,7 +23,6 @@ private void Update() {
 }
 
 void FixedUpdate() { 
-
 	Vector3 torque = Vector3.zero;
     torque.x = Input.GetAxis("Horizontal");
     Vector3 velocity = Vector3.zero;
