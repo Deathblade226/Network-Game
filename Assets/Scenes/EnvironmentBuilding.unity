@@ -926,72 +926,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2f96746c6005c64888263f64272a556, type: 3}
---- !u!1001 &7763751549771345803
+--- !u!1001 &1616740903975660032
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1644742524348183997, guid: e8bd124d1385fae43a634e8202af346b,
-        type: 3}
-      propertyPath: m_Name
-      value: BaseRoom-2DoorRT
-      objectReference: {fileID: 0}
-    - target: {fileID: 8003712651849204830, guid: e8bd124d1385fae43a634e8202af346b,
+    - target: {fileID: 1352018800577855957, guid: e287dd842c7b99e49ab58c839ac2b4cc,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8003712651849204830, guid: e8bd124d1385fae43a634e8202af346b,
+    - target: {fileID: 1352018800577855957, guid: e287dd842c7b99e49ab58c839ac2b4cc,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8003712651849204830, guid: e8bd124d1385fae43a634e8202af346b,
+    - target: {fileID: 1352018800577855957, guid: e287dd842c7b99e49ab58c839ac2b4cc,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8003712651849204830, guid: e8bd124d1385fae43a634e8202af346b,
+    - target: {fileID: 1352018800577855957, guid: e287dd842c7b99e49ab58c839ac2b4cc,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8003712651849204830, guid: e8bd124d1385fae43a634e8202af346b,
+    - target: {fileID: 1352018800577855957, guid: e287dd842c7b99e49ab58c839ac2b4cc,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8003712651849204830, guid: e8bd124d1385fae43a634e8202af346b,
+    - target: {fileID: 1352018800577855957, guid: e287dd842c7b99e49ab58c839ac2b4cc,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8003712651849204830, guid: e8bd124d1385fae43a634e8202af346b,
+    - target: {fileID: 1352018800577855957, guid: e287dd842c7b99e49ab58c839ac2b4cc,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8003712651849204830, guid: e8bd124d1385fae43a634e8202af346b,
+    - target: {fileID: 1352018800577855957, guid: e287dd842c7b99e49ab58c839ac2b4cc,
         type: 3}
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 8003712651849204830, guid: e8bd124d1385fae43a634e8202af346b,
+    - target: {fileID: 1352018800577855957, guid: e287dd842c7b99e49ab58c839ac2b4cc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8003712651849204830, guid: e8bd124d1385fae43a634e8202af346b,
+    - target: {fileID: 1352018800577855957, guid: e287dd842c7b99e49ab58c839ac2b4cc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8003712651849204830, guid: e8bd124d1385fae43a634e8202af346b,
+    - target: {fileID: 1352018800577855957, guid: e287dd842c7b99e49ab58c839ac2b4cc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4340886146305879558, guid: e287dd842c7b99e49ab58c839ac2b4cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6450745408339800847, guid: e287dd842c7b99e49ab58c839ac2b4cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6725515541858450244, guid: e287dd842c7b99e49ab58c839ac2b4cc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711006108081647670, guid: e287dd842c7b99e49ab58c839ac2b4cc,
+        type: 3}
+      propertyPath: m_Name
+      value: BaseRoom-2DoorTJ
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e8bd124d1385fae43a634e8202af346b, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: e287dd842c7b99e49ab58c839ac2b4cc, type: 3}
