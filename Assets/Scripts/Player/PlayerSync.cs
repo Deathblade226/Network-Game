@@ -15,11 +15,11 @@ Quaternion m_currentRotation;
 void Start()    {        
     if (photonView.IsMine) {
     // player is local
-    Cursor.lockState = CursorLockMode.Locked;
-    Camera.main.transform.position = transform.position - this.transform.forward * 5 + transform.up * 2;
-    Camera.main.transform.LookAt(transform.position);
-    Camera.main.transform.rotation.Set(30,0,0,0);
-    Camera.main.transform.parent = transform;
+    //Cursor.lockState = CursorLockMode.Locked;
+    //Camera.main.transform.position = transform.position - this.transform.forward * 5 + transform.up * 2;
+    //Camera.main.transform.LookAt(transform.position);
+    //Camera.main.transform.rotation.Set(30,0,0,0);
+    //Camera.main.transform.parent = transform;
     } else {
     // player is Remote, deactivate the scripts and object that should only be enabled for the local player            
     for (int i = 0; i < m_localScripts.Length; i++) { m_localScripts[i].enabled = false; }
