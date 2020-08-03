@@ -26,7 +26,7 @@ void RPC_MonsterAttack() {
 [PunRPC]
 void RPC_PlayerAttack() { 
     GameObject go = null;
-    go = AIUtilities.GetNearestGameObject(gameObject, "Monster", 0, 360, true);
+    go = AIUtilities.GetNearestGameObject(gameObject, "Player", 0, 360, true);
     if (go != null) { 
     Damagable health = go.GetComponent<Damagable>();    
     if (health != null) health.ApplyDamage(Damage);
