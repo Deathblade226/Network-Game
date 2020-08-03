@@ -12,20 +12,23 @@ public override void Attack() { hit = false; }
 private void Awake() { Type = "Melee"; }
 
 [PunRPC]
-void RPC_PlayerAttack() { 
-    GameObject go = null;
-    go = AIUtilities.GetNearestGameObject(gameObject, "Player", 1, 360, true);
-    if (go != null) { 
+void RPC_PlayerAttack(GameObject go) { 
+    if (go != null && go.tag == "Player") { 
     Damagable health = go.GetComponent<Damagable>();    
-    if (health != null) health.ApplyDamage(Damage);
+    if (health != null) {
+    health.ApplyDamage(Damage);
+    }
     if (DestroyOnHit) Destroy(gameObject);
     }   
 }
 
 private void OnCollisionEnter(Collision collision) {
-    if (!PV.IsMine) { return; }
+    //if (!PV.IsMine) { return; }
     GameObject go = collision.collider.gameObject;
-    if (gameObject.tag == "Player") { PV.RPC("RPC_PlayerAttack", RpcTarget.All); }
+    Debug.Log(go);
+    GameObject[] objects = new GameObject[1];
+    objects[0] = go;
+    if (go.tag != "Weapon") { PV.RPC("RPC_PlayerAttack", RpcTarget.All, objects); }
 }
 
 }

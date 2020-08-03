@@ -717,7 +717,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1173177213022252, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Weapon
       objectReference: {fileID: 0}
     - target: {fileID: 1668188202801692, guid: 7e6e29f21a00d5f499e21eb93d6fabaa, type: 3}
       propertyPath: m_Name

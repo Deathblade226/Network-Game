@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,6 +29,7 @@ private void Update() {
 	if (m_healthBar != null) m_healthBar.value = health;
 }
 
+[PunRPC]
 public void ApplyDamage(float damageAmount) {
 	health = health - (damageAmount - (damageAmount*DamageReduction));
 	if (!destroyed && health <= 0) {
@@ -38,8 +40,7 @@ public void ApplyDamage(float damageAmount) {
 	}
 	Destroy(gameObject);
 	destroyed = true;
-}
-	
+	}
 }
 
 }
