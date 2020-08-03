@@ -23,10 +23,12 @@ void Update() {
 private void LateUpdate() {
     Quaternion rotation = Target.rotation * Quaternion.AngleAxis(Yaw, Vector3.up) * Quaternion.AngleAxis(Pitch, Vector3.right);
     Vector3 newPosition = Target.position + rotation * new Vector3(0,0, -m_distance);
+    
+    transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * m_smoothCam);
+    
     if (Physics.Raycast(Target.position, newPosition - Target.position, out RaycastHit hit, m_distance)) {
     transform.position = hit.point;
     }
-    transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * m_smoothCam);
 
     transform.LookAt(Target);
 }
