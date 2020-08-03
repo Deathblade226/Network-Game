@@ -13,12 +13,12 @@ Vector2 roomListScroll = Vector2.zero;
 bool joiningRoom = false; 
 
 void Start() {
+    Cursor.lockState = CursorLockMode.None;
     PhotonNetwork.AutomaticallySyncScene = true; if (!PhotonNetwork.IsConnected) {
     PhotonNetwork.PhotonServerSettings.AppSettings.AppVersion = appVersion; PhotonNetwork.ConnectUsingSettings(); // settings in PhotonServerSettings in Unity        
     }    
 }    
 public override void OnDisconnected(DisconnectCause cause) {
-    Cursor.lockState = CursorLockMode.None;
     Debug.Log("OnFailedToConnectToPhoton. StatusCode: " + cause.ToString() + " ServerAddress: " + PhotonNetwork.ServerAddress);    
 }
 

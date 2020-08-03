@@ -2568,7 +2568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_target: {fileID: 0}
-  m_distance: 4
+  m_distance: 5
   m_smoothCam: 10
 --- !u!1001 &1288702250
 PrefabInstance:
