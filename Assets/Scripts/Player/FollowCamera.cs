@@ -13,7 +13,7 @@ float Yaw { get; set; } = 0;
 public Transform Target { get => m_target; set => m_target = value; }
 
 void Start() {
-       
+    Cursor.lockState = CursorLockMode.Locked;
 }
 
 void Update() {

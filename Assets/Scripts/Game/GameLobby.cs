@@ -18,6 +18,7 @@ void Start() {
     }    
 }    
 public override void OnDisconnected(DisconnectCause cause) {
+    Cursor.lockState = CursorLockMode.None;
     Debug.Log("OnFailedToConnectToPhoton. StatusCode: " + cause.ToString() + " ServerAddress: " + PhotonNetwork.ServerAddress);    
 }
 
