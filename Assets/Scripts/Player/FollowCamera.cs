@@ -10,9 +10,10 @@ public class FollowCamera : MonoBehaviour {
 
 float Pitch { get; set; } = 20;
 float Yaw { get; set; } = 0;
+public Transform Target { get => m_target; set => m_target = value; }
 
 void Start() {
-    Cursor.lockState = CursorLockMode.Locked;       
+       
 }
 
 void Update() {
@@ -20,17 +21,14 @@ void Update() {
 }
 
 private void LateUpdate() {
-    if (m_target != null) { 
-    Quaternion rotation = m_target.rotation * Quaternion.AngleAxis(Yaw, Vector3.up) * Quaternion.AngleAxis(Pitch, Vector3.right);
-    Vector3 newPosition = m_target.position + rotation * new Vector3(0,0, -m_distance);
-
-    if (Physics.Raycast(m_target.position, newPosition - m_target.position, out RaycastHit hit)) {
+    Quaternion rotation = Target.rotation * Quaternion.AngleAxis(Yaw, Vector3.up) * Quaternion.AngleAxis(Pitch, Vector3.right);
+    Vector3 newPosition = Target.position + rotation * new Vector3(0,0, -m_distance);
+    if (Physics.Raycast(Target.position, newPosition - Target.position, out RaycastHit hit)) {
     transform.position = hit.point;
     }
     transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * m_smoothCam);
 
-    transform.LookAt(m_target);
-    }
+    transform.LookAt(Target);
 }
 
 }
