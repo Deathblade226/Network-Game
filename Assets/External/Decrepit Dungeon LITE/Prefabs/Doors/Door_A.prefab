@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 4159288758619292967}
   - component: {fileID: 2163464854578326514}
   - component: {fileID: 32295319290969728}
+  - component: {fileID: 7718155990553159026}
+  - component: {fileID: 975065666284619880}
   m_Layer: 0
   m_Name: Door_A
   m_TagString: Untagged
@@ -61,6 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prompt: {fileID: 8138852072180494259}
   animator: {fileID: 32295319290969728}
+  doorCollider: {fileID: 4674430904263295860}
 --- !u!95 &32295319290969728
 Animator:
   serializedVersion: 3
@@ -80,6 +83,49 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7718155990553159026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853311144000512114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 975065666284619880}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &975065666284619880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853311144000512114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: Open
+  m_SynchronizeLayers:
+  - SynchronizeType: 2
+    LayerIndex: 0
 --- !u!1 &4059220521347761572
 GameObject:
   m_ObjectHideFlags: 0
