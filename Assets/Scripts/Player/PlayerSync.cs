@@ -45,6 +45,9 @@ void Update() {
     m_animator.SetFloat("Speed Z", (transform.position.z - m_currentPosition.z));
     transform.rotation = Quaternion.Lerp(transform.rotation, m_currentRotation, Time.deltaTime * 5);        
     }    
+    if (photonView.IsMine) { 
+    if (Input.GetKeyDown(KeyCode.C)) Cursor.lockState = (Cursor.lockState == CursorLockMode.Locked) ? CursorLockMode.None : CursorLockMode.Locked;
+    }
 }
 
 }
