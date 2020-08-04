@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 [SerializeField] GameObject m_weapon = null;
 
 private void Update() {
-	Debug.Log(m_weapon);
+	//Debug.Log(m_weapon);
 	if (m_weapon != null && m_weapon.activeSelf) { 
 	if (Input.GetMouseButtonDown(0)) {  
 	m_animator.SetLayerWeight(1,1);

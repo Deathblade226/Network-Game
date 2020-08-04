@@ -11,24 +11,22 @@ public override void Attack() { hit = false; }
 
 private void Awake() { Type = "Melee"; }
 
-[PunRPC]
-void RPC_PlayerAttack(GameObject go) { 
+void PlayerAttack(GameObject go) { 
     if (go != null && go.tag == "Player") { 
     Damagable health = go.GetComponent<Damagable>();    
     if (health != null) {
     health.ApplyDamage(Damage);
+    
     }
     if (DestroyOnHit) Destroy(gameObject);
     }   
 }
 
-private void OnCollisionEnter(Collision collision) {
-    //if (!PV.IsMine) { return; }
-    GameObject go = collision.collider.gameObject;
-    Debug.Log(go);
+private void OnTriggerEnter(Collider other) {
+    GameObject go = other.gameObject;
     GameObject[] objects = new GameObject[1];
     objects[0] = go;
-    if (go.tag != "Weapon") { PV.RPC("RPC_PlayerAttack", RpcTarget.All, objects); }
+    if (go.tag != "Weapon") { PlayerAttack(go); }
 }
 
 }

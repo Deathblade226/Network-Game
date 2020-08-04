@@ -1,18 +1,25 @@
 ﻿using UnityEngine;
 using Photon.Pun;
+using TMPro;
+
 public class PlayerSync : MonoBehaviourPun, IPunObservable {    
 
 
 [SerializeField] Animator m_animator = null;
 [SerializeField] Transform m_camTarget = null;
+[SerializeField] TMP_Text m_namePlate = null;
+[SerializeField] PhotonView pv = null;
 // list of the scripts that should only be active for the local player (ex. PlayerController, MouseLook etc.)    
 public MonoBehaviour[] m_localScripts;    
 // list of the GameObjects that should only be active for the local player (ex. Camera, AudioListener etc.)    
 public GameObject[] m_localObjects;    
 // values that will be synced over network    
 Vector3 m_currentPosition;    
-Quaternion m_currentRotation;    
+Quaternion m_currentRotation;
 
+private void Awake() {
+    m_namePlate.text = pv.Owner.NickName;        
+}
 
 void Start()    {        
     if (photonView.IsMine) {
