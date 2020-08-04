@@ -12,6 +12,7 @@ public class Damagable : MonoBehaviour {
 [SerializeField] [Range(-1,1)]float m_damageReduction = 0;
 [SerializeField] float m_regenAmount = 0;
 [SerializeField] float m_regenCd = 0;
+[SerializeField] bool m_constantRegen = false;
 [SerializeField] float m_damageCd = 0;
 [SerializeField] PhotonView PV = null;
 [SerializeField] int score = 0;
@@ -56,7 +57,7 @@ public void ApplyDamage(float damageAmount) {
 
 [PunRPC]
 public void RegenHealth() {
-	if (damageCd <= 0 && regenCd <= 0) {
+	if (m_constantRegen || (damageCd <= 0 && regenCd <= 0)) {
 	
 	}
 }
