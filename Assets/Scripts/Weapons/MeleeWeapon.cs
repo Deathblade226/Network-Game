@@ -23,6 +23,8 @@ void PlayerAttack(GameObject go) {
 }
 
 private void OnTriggerEnter(Collider other) {
+    Attack();
+    Debug.Log(hit);
     GameObject go = other.gameObject;
     GameObject[] objects = new GameObject[1];
     objects[0] = go;
