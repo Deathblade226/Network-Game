@@ -16,7 +16,7 @@ MonoBehaviour:
     AppIdRealtime: 2dd29a1f-f31e-4cc4-98f1-70f50f9bda85
     AppIdChat: 
     AppIdVoice: 
-    AppVersion: 0.0
+    AppVersion: 
     UseNameServer: 1
     FixedRegion: 
     Server: 
@@ -27,7 +27,7 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: usw
+  DevRegion: 
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
@@ -38,13 +38,11 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
-  - MonsterAttack
-  - PlayerAttack
   - RPC_MonsterAttack
   - RPC_PlayerAttack
   - RPC_Summon
   - ApplyDamage
   - Attack
   DisableAutoOpenWizard: 1
-  ShowSettings: 1
-  DevRegionSetOnce: 1
+  ShowSettings: 0
+  DevRegionSetOnce: 0

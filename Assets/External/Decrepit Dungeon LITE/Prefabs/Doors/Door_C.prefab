@@ -164,7 +164,7 @@ MeshCollider:
   m_GameObject: {fileID: 4284412757377893681}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -258,7 +258,7 @@ MeshCollider:
   m_GameObject: {fileID: 4284412757377905197}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -548,6 +548,8 @@ GameObject:
   - component: {fileID: 8222091238794317458}
   - component: {fileID: 6829347709706958071}
   - component: {fileID: 9031488886398613745}
+  - component: {fileID: 257859080072040497}
+  - component: {fileID: 4333026029801056185}
   m_Layer: 0
   m_Name: Door_C
   m_TagString: Untagged
@@ -587,6 +589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prompt: {fileID: 5283647739709347192}
   animator: {fileID: 6829347709706958071}
+  doorCollider: {fileID: 4284412757380077587}
 --- !u!95 &6829347709706958071
 Animator:
   serializedVersion: 3
@@ -619,3 +622,46 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 4.2, z: 2.4}
   m_Center: {x: 0.17480779, y: 2.0748954, z: -1.2160565}
+--- !u!114 &257859080072040497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8538536380387133267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 4333026029801056185}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &4333026029801056185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8538536380387133267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: Open
+  m_SynchronizeLayers:
+  - SynchronizeType: 2
+    LayerIndex: 0
