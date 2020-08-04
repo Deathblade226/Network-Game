@@ -787,6 +787,7 @@ MonoBehaviour:
   m_damage: {fileID: 0}
   m_healthBar: {fileID: 8701591680475226818}
   m_damageReduction: 0
+  PV: {fileID: 2015498855784408344}
   score: 0
 --- !u!114 &2955727713848092290
 MonoBehaviour:

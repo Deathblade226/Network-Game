@@ -25,12 +25,13 @@ private void LateUpdate() {
     Vector3 newPosition = Target.position + rotation * new Vector3(0,0, -m_distance);
     
     transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * m_smoothCam);
+    transform.LookAt(Target);
     
     if (Physics.Raycast(Target.position, newPosition - Target.position, out RaycastHit hit, m_distance)) {
     transform.position = hit.point;
     }
 
-    transform.LookAt(Target);
 }
+
 
 }

@@ -15,8 +15,8 @@ void PlayerAttack(GameObject go) {
     if (go != null && go.tag == "Player") { 
     Damagable health = go.GetComponent<Damagable>();    
     if (health != null) {
-    health.ApplyDamage(Damage);
-    
+    health.RunRPCMethod(Damage);
+    hit = true;
     }
     if (DestroyOnHit) Destroy(gameObject);
     }   
@@ -26,7 +26,7 @@ private void OnTriggerEnter(Collider other) {
     GameObject go = other.gameObject;
     GameObject[] objects = new GameObject[1];
     objects[0] = go;
-    if (go.tag != "Weapon") { PlayerAttack(go); }
+    if (go.tag != "Weapon" && hit == false) { PlayerAttack(go); }
 }
 
 }

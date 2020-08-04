@@ -10,6 +10,7 @@ public class Damagable : MonoBehaviour {
 [SerializeField] Damage m_damage = null;
 [SerializeField] Slider m_healthBar = null;
 [SerializeField] [Range(-1,1)]float m_damageReduction = 0;
+[SerializeField] PhotonView PV = null;
 [SerializeField] int score = 0;
 
 private float maxHealth;
@@ -41,6 +42,11 @@ public void ApplyDamage(float damageAmount) {
 	Destroy(gameObject);
 	destroyed = true;
 	}
+}
+
+public void RunRPCMethod(float damage) { 
+	PV.RPC("ApplyDamage", RpcTarget.All, damage);
+
 }
 
 }
