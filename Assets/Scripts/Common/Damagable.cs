@@ -35,7 +35,9 @@ private void Start() { MaxHealth = health;
 private void Update() {
 	if (m_healthBar != null) { m_healthBar.value = health; }
 	if (damageCd > 0) { damageCd -= Time.deltaTime; }
-	if (regenCd > 0) { regenCd -= Time.deltaTime; }
+	if (damageCd <= 0 && regenCd > 0) { regenCd -= Time.deltaTime; }
+	else { regenCd = m_regenCd; }
+	PV.RPC("RegenHealth", RpcTarget.All);
 }
 
 [PunRPC]
@@ -58,7 +60,7 @@ public void ApplyDamage(float damageAmount) {
 [PunRPC]
 public void RegenHealth() {
 	if (m_constantRegen || (damageCd <= 0 && regenCd <= 0)) {
-	
+	if (health + m_regenAmount <= maxHealth) { health += m_regenAmount; }
 	}
 }
 
