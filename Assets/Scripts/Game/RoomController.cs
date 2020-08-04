@@ -2,6 +2,8 @@
 using Photon.Pun;
 using System.Collections.Generic;
 using Photon.Realtime;
+using System.Linq;
+using System;
 
 public class RoomController : MonoBehaviourPunCallbacks
 {
@@ -11,8 +13,11 @@ public class RoomController : MonoBehaviourPunCallbacks
     [SerializeField] List<Transform> m_transforms;
     private List<Player> m_players = new List<Player>(PhotonNetwork.PlayerList.Length);
 
+    private bool playerSpawned = false;
+
     void Start()
     {
+        m_transforms = m_transforms.OrderBy(x => Guid.NewGuid()).ToList();
         // in case we started this scene with the wrong scene being active, simply load the menu scene        
         if (PhotonNetwork.CurrentRoom == null)
         {
@@ -20,17 +25,17 @@ public class RoomController : MonoBehaviourPunCallbacks
             UnityEngine.SceneManagement.SceneManager.LoadScene("Lobby");
             return;
         }
+    }
 
-        // spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate  
-        Transform spawnPoint = null;
-        for (int i = 0; i < m_players.Count; i++)
+    private void Update()
+    {
+        if(!playerSpawned)
         {
-            if (m_players[i] == null && spawnPoint != null)
-            {
-                spawnPoint = m_transforms[i];
-            }
+            Transform spawnPoint = m_transforms[new System.Random().Next(0, m_transforms.Count)];
+            // spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate  
+            PhotonNetwork.Instantiate(m_playerPrefab.name, spawnPoint.position, Quaternion.identity, 0);
+            playerSpawned = true;
         }
-        PhotonNetwork.Instantiate(m_playerPrefab.name, spawnPoint.position, Quaternion.identity, 0);
     }
     void OnGUI()
     {
@@ -55,14 +60,18 @@ public class RoomController : MonoBehaviourPunCallbacks
 
     }
 
-    public override void OnPlayerEnteredRoom(Player newPlayer)
+    public override void OnJoinedRoom()
     {
-        base.OnPlayerEnteredRoom(newPlayer);
-        m_players.Add(newPlayer);
+        base.OnJoinedRoom();
+        Debug.Log("Joined");
     }
+
+
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
+        Debug.Log("PlayerLeft");
+
         base.OnPlayerLeftRoom(otherPlayer);
         m_players.Remove(otherPlayer);
     }
