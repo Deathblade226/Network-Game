@@ -713,6 +713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   destroyOnHit: 0
+  pv: {fileID: 7481550558164974866}
   Type: Summon
   summonMonster: {fileID: 3504155887681792626, guid: 01a99be97e2564548ba7f48c48fe9b16,
     type: 3}

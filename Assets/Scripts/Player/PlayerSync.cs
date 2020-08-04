@@ -2,7 +2,9 @@
 using Photon.Pun;
 public class PlayerSync : MonoBehaviourPun, IPunObservable {    
 
+
 [SerializeField] Animator m_animator = null;
+[SerializeField] Transform m_camTarget = null;
 // list of the scripts that should only be active for the local player (ex. PlayerController, MouseLook etc.)    
 public MonoBehaviour[] m_localScripts;    
 // list of the GameObjects that should only be active for the local player (ex. Camera, AudioListener etc.)    
@@ -15,11 +17,7 @@ Quaternion m_currentRotation;
 void Start()    {        
     if (photonView.IsMine) {
     // player is local
-    Cursor.lockState = CursorLockMode.Locked;
-    Camera.main.transform.position = transform.position - this.transform.forward * 5 + transform.up * 2;
-    Camera.main.transform.LookAt(transform.position);
-    Camera.main.transform.rotation.Set(30,0,0,0);
-    Camera.main.transform.parent = transform;
+    Camera.main.GetComponent<FollowCamera>().Target = m_camTarget;
     } else {
     // player is Remote, deactivate the scripts and object that should only be enabled for the local player            
     for (int i = 0; i < m_localScripts.Length; i++) { m_localScripts[i].enabled = false; }
@@ -45,8 +43,10 @@ void Update() {
     m_animator.SetFloat("Speed Z", (transform.position.z - m_currentPosition.z));
     transform.rotation = Quaternion.Lerp(transform.rotation, m_currentRotation, Time.deltaTime * 5);        
     }    
-    if (photonView.IsMine) { 
-    if (Input.GetKeyDown(KeyCode.C)) Cursor.lockState = (Cursor.lockState == CursorLockMode.Locked) ? CursorLockMode.None : CursorLockMode.Locked;
+    if (photonView.IsMine) {
+    if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.Escape)) { 
+    Cursor.lockState = ( Cursor.lockState == CursorLockMode.Locked ) ? CursorLockMode.None : CursorLockMode.Locked; 
+    }
     }
 }
 
