@@ -3754,6 +3754,7 @@ MonoBehaviour:
   m_damage: {fileID: 0}
   m_healthBar: {fileID: 1349932479}
   m_damageReduction: 0
+  PV: {fileID: 0}
   score: 0
 --- !u!65 &2145362229
 BoxCollider:
