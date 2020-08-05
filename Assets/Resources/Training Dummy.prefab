@@ -202,7 +202,8 @@ MonoBehaviour:
   m_damage: {fileID: 0}
   m_healthBar: {fileID: 6060374548975778267}
   m_damageReduction: 0.1
-  m_regenAmount: 1
+  m_regenCap: 0.5
+  m_regenAmount: 0.25
   m_regenCd: 5
   m_constantRegen: 0
   m_damageCd: 0.5

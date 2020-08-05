@@ -10,6 +10,7 @@ public class Damagable : MonoBehaviour {
 [SerializeField] Damage m_damage = null;
 [SerializeField] Slider m_healthBar = null;
 [SerializeField] [Range(-1,1)]float m_damageReduction = 0;
+[SerializeField] [Range(0,1)]float m_regenCap = 1;
 [SerializeField] float m_regenAmount = 0;
 [SerializeField] float m_regenCd = 0;
 [SerializeField] bool m_constantRegen = false;
@@ -33,11 +34,16 @@ private void Start() { MaxHealth = health;
 }
 
 private void Update() {
+	//Updates the healthbar
 	if (m_healthBar != null) { m_healthBar.value = health; }
+	//Reduces the IFrames after hit
 	if (damageCd > 0) { damageCd -= Time.deltaTime; }
+	//Redices the regen cd when the target hasnt taken damage in a bit
+	//This will start the regen when both cds are 0
+	//Resets the regen cd if hit
 	if (damageCd <= 0 && regenCd > 0) { regenCd -= Time.deltaTime; }
+	else if (m_constantRegen || ( damageCd <= 0 && regenCd <= 0 )) { PV.RPC("RegenHealth", RpcTarget.All); }
 	else { regenCd = m_regenCd; }
-	PV.RPC("RegenHealth", RpcTarget.All);
 }
 
 [PunRPC]
@@ -59,10 +65,10 @@ public void ApplyDamage(float damageAmount) {
 
 [PunRPC]
 public void RegenHealth() {
-	if (m_constantRegen || (damageCd <= 0 && regenCd <= 0)) {
-	if (health + m_regenAmount <= maxHealth) { health += m_regenAmount; }
-	else if (health + m_regenAmount > maxHealth && health < maxHealth) { health = maxHealth; }
-	}
+	float regenCap = ( maxHealth * m_regenCap);
+	//Debug.Log(regenCap);
+	if (health + m_regenAmount <= regenCap) { health += m_regenAmount; }
+	else if (health + m_regenAmount > regenCap && health < regenCap) { health = regenCap; }
 }
 
 public void RunRPCMethod(float damage) { 
