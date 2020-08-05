@@ -61,6 +61,7 @@ public void ApplyDamage(float damageAmount) {
 public void RegenHealth() {
 	if (m_constantRegen || (damageCd <= 0 && regenCd <= 0)) {
 	if (health + m_regenAmount <= maxHealth) { health += m_regenAmount; }
+	else if (health + m_regenAmount > maxHealth && health < maxHealth) { health = maxHealth; }
 	}
 }
 
