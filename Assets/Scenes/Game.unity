@@ -30042,6 +30042,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Training Dummy
       objectReference: {fileID: 0}
+    - target: {fileID: 6060374549590773079, guid: 1703a82c25a95564897e329ab4fb3442,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6060374549590773084, guid: 1703a82c25a95564897e329ab4fb3442,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30105,12 +30110,12 @@ PrefabInstance:
     - target: {fileID: 6060374550567482268, guid: 1703a82c25a95564897e329ab4fb3442,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6060374550567482268, guid: 1703a82c25a95564897e329ab4fb3442,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1703a82c25a95564897e329ab4fb3442, type: 3}
